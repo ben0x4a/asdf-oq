@@ -3,7 +3,7 @@
 URL_BASE="https://github.com/Blacksmoke16/oq/releases/download/v${ASDF_INSTALL_VERSION}"
 case $(uname) in
     Linux)
-        ARCHIVE_FILE="oq-v${ASDF_INSTALL_VERSION}_linux_x86_64"
+        ARCHIVE_FILE="oq-v${ASDF_INSTALL_VERSION}-linux-x86_64"
         ;;
     Darwin)
         echo "Not implemented."
@@ -29,6 +29,7 @@ function install() {
     cd "${tmp_download_dir}"
     mkdir -p "${ASDF_INSTALL_PATH}/bin"
     cp -p "${ARCHIVE_FILE}" "${ASDF_INSTALL_PATH}/bin/oq"
+    chmod +x "${ASDF_INSTALL_PATH}/bin/oq"
 }
 
 
